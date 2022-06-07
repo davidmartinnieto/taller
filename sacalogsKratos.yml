@@ -24,4 +24,4 @@
     - name: Descargamos el fichero
       fetch:
         src: ~/logs/{{ztid}}.log
-        dest: /home/neos/AMR/Ansible
+        dest: /tmp
