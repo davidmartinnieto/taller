@@ -11,6 +11,8 @@
       args:
          chdir: ~/logs
          executable: /bin/bash
+      register: zgrep
+      failed_when: zgrep.rc not in [0, 1]                  
       when: fecha == "Hoy"
 
     - name: Recuperamos "{{ztid}}" a un fichero
@@ -19,6 +21,8 @@
       args:
          chdir: ~/logs
          executable: /bin/bash
+      register: zgrep
+      failed_when: zgrep.rc not in [0, 1]         
       when: fecha != "Hoy"
 
     - name: Descargamos el fichero
