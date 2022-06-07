@@ -1,0 +1,27 @@
+---
+- hosts: KRATOS
+  user: drools
+  vars:
+    log: logging-ms-ordergeneration-9184
+  tasks:
+   ## PRUEBA KRATOS ##
+    - name: Recuperamos "{{ztid}}" a un fichero 
+      shell:
+         zgrep "{{ztid}}" "{{log}}".log > "{{ztid}}".log
+      args:
+         chdir: ~/logs
+         executable: /bin/bash
+      when: fecha == "Hoy"
+
+    - name: Recuperamos "{{ztid}}" a un fichero
+      shell:
+         zgrep "{{ztid}}" "{{log}}"."{{fecha}}".log > "{{ztid}}".log
+      args:
+         chdir: ~/logs
+         executable: /bin/bash
+      when: fecha != "Hoy"
+
+    - name: Descargamos el fichero
+      fetch:
+        src: ~/logs/{{ztid}}.log
+        dest: /home/neos/AMR/Ansible
