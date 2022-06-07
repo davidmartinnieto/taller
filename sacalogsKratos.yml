@@ -25,3 +25,12 @@
       fetch:
         src: ~/logs/{{ztid}}.log
         dest: /tmp
+        
+    - name: Read a file content
+      shell: |
+         cat ~/logs/{{ztid}}.log
+      register: file_content
+
+    - name: Show file content on console
+      debug:
+        msg: "{{ file_content.stdout }}"
