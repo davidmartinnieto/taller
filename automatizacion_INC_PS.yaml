@@ -1,0 +1,10 @@
+---
+- name: Connect to python script
+  hosts: KRATOS
+  user: neos
+  tasks:
+   ## PRUEBA PS ##
+    - name: Execute a script
+      script: /home/neos/AMR/Ansible/Automatizacion_INC_PS.py
+      args:
+        executable: /usr/bin/python
