@@ -4,7 +4,7 @@
   user: icm
   tasks:
    ## PRUEBA PS ##
-    - name: Execute a script
+    - name: Execute a "{{proceso}}" script
       shell: |
               . ~/.profile && export LANG=en_US.UTF-8 && /icm/python3-virtualenv/bin/python "{{proceso}}"_load.py "{{capi_code}}"
       args:
