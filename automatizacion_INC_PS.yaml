@@ -7,7 +7,7 @@
    ## PRUEBA PS ##
     - name: Execute a script
       shell: |
-                                . ~/.profile && export LANG=en_US.UTF-8 && /icm/python3-virtualenv/bin/python Automatizacion_INC_PS.py"{{capi_code}}"
+                                . ~/.profile && export LANG=en_US.UTF-8 && /icm/python3-virtualenv/bin/python Automatizacion_INC_PS.py
       args:
         executable: /usr/bin/python
         chdir: /icm/auto_ps
