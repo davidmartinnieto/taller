@@ -5,9 +5,8 @@
   vars:
   tasks:
    ## PRUEBA PS ##
-    - name: Ejecucion proceso "{{proceso}}" de automatización
-      shell: |
-              . ~/.profile && export LANG=en_US.UTF-8 && /icm/python3-virtualenv/bin/python "{{proceso}}"_load.py "{{capi_code}}"
+    - name: Ejecucion proceso de automatización
+      shell: python Automatizacion_INC_PS.py
       args:
         chdir: /icm/auto_ps/Automatizacion_INC_PS.py
         executable: /usr/bin/python
