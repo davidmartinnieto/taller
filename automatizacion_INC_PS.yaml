@@ -2,10 +2,16 @@
 - name: Connect to python script
   hosts: AOTLXPPTHA00002
   user: icm
+  vars:
   tasks:
    ## PRUEBA PS ##
-    - name: Ejecucion proceso de automatización
-      script: /icm/auto_ps/Automatizacion_INC_PS.py
-      remote_src: yes
+    - name: Ejecucion proceso "{{proceso}}" de automatización
+       shell: |
+                                . ~/.profile && export LANG=en_US.UTF-8 && /icm/python3-virtualenv/bin/python "{{proceso}}"_Automatizacion_INC_PS.py "{{capi_code}}"
       args:
         executable: /usr/bin/python
+        chdir: /icm/auto_ps
+        register: salida
+     - name: Mostrar salida del proceso
+       debug:
+        msg: "{{ salida.stdout }}"
