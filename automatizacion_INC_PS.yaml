@@ -6,7 +6,6 @@
   tasks:
    ## PRUEBA PS ##
     - name: Ejecucion proceso de automatización
-      shell: python Automatizacion_INC_PS.py
+      shell: python /icm/auto_ps/Automatizacion_INC_PS.py
       args:
-        chdir: /icm/auto_ps/Automatizacion_INC_PS.py
         executable: /usr/bin/python
