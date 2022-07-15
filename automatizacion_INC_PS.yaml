@@ -2,6 +2,7 @@
 - name: Connect to python script
   hosts: AOTLXPPTHA00002
   user: icm
+  vars:
   tasks:
    ## PRUEBA PS ##
     - name: Ejecucion proceso "{{proceso}}" de automatización
