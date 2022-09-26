@@ -7,7 +7,7 @@
    ## PRUEBA PS ##
     - name: Execute a script
       shell: |
-                                . ~/.profile && export LANG=en_US.UTF-8 && python Automatizacion_INC_PS.py
+                                . python Automatizacion_INC_PS.py
       args:
         executable: /bin/bash
         chdir: /home/neos/DMN/awx
