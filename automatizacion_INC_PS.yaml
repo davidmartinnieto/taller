@@ -7,7 +7,7 @@
    ## PRUEBA PS ##
     - name: Execute a script
       shell: |
-                                pwd
+                                /usr/bin/python incidenciasPS.py
       args:
         executable: /bin/bash
         chdir: /home/neos/DMN/awx
