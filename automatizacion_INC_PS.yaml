@@ -1,14 +1,14 @@
 ---
 - name: Connect to python script
-  hosts: AOTLXPPTHA00002
-  user: icm
+  hosts: Monitor
+  user: neos
   vars:
   tasks:
    ## PRUEBA PS ##
     - name: Execute a script
       shell: |
-                                . ~/.profile && export LANG=en_US.UTF-8 && /icm/python3-virtualenv/bin/python Automatizacion_INC_PS.py
+                                . ~/.profile && export LANG=en_US.UTF-8 && python Automatizacion_INC_PS.py
       args:
         executable: /bin/bash
-        chdir: /icm/auto_ps
+        chdir: /home/neos/DMN/awx
 
