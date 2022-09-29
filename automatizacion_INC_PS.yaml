@@ -7,7 +7,7 @@
    ## PRUEBA PS ##
     - name: Execute a script
       shell: |
-                                /home/neos/DMN/awx/incidenciasPS.sh
+                                ./incidenciasPS.sh
       args:
         executable: /bin/bash
         chdir: /home/neos/DMN/awx
